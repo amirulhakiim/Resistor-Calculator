@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/roboto_font.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif;
+            margin: 0%;
+            background-color: cadetblue;
+            line-height: 20px;
+        }
+        
+        h1 {
+            padding-block-start: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="./MainPage.html" class="active">Home</a>
+        <a href="./Example.html">Examples</a>
+        <a href="./Calculate.html">Calculator</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div style="padding-left:32px;padding-right:32px">
+        <center>
+            <h1><u>Resistors</u></h1><br>
+        </center>
+        <p align="justify">Because the relationship between voltage, current, and resistance in any circuit is so regular, we can reliably control any variable in a circuit simply by controlling the other two. Perhaps the easiest variable in any circuit to control is its
+            resistance. This can be done by changing the material, size, and shape of its conductive components (remember how the thin metal filament of a lamp created more electrical resistance than a thick wire?).</p>
+        <img src="./image/1.png" style="width:50%;height:50%" class="center" border="5"><br>
+
+        <h2><u>What is a Resistor?</u></h2>
+        <p align="justify">Special components called resistors are made for the express purpose of creating a precise quantity of resistance for insertion into a circuit. They are typically constructed of metal wire or carbon and engineered to maintain a stable resistance
+            value over a wide range of environmental conditions. Unlike lamps, they do not produce light, but they do produce heat as electric power is dissipated by them in a working circuit. Typically, though, the purpose of a resistor is not to produce
+            usable heat, but simply to provide a precise quantity of electrical resistance.</p>
+        <br>
+        <h2><u>Resistor Schematic Symbols and Values</u></h2>
+        <p align="justify">The most common schematic symbol for a resistor is a zig-zag line:</p>
+        <img src="./image/2.png" style="width:10%;height:10%" class="center"><br>
+        <p align="justify">Resistor values in ohms are usually shown as an adjacent number, and if several resistors are present in a circuit, they will be labeled with a unique identifier number such as R1, R2, R3, etc. As you can see, resistor symbols can be shown either
+            horizontally or vertically.</p>
+        <p align="justify">In keeping more with their physical appearance, an alternative schematic symbol for a resistor looks like a small, rectangular box:</p>
+        <img src="./image/3.png" style="width:10%;height:10%" class="center"><br>
+        <p align="justify">Resistors can also be shown to have varying rather than fixed resistances. This might be for the purpose of describing an actual physical device designed for the purpose of providing an adjustable resistance, or it could be to show some component
+            that just happens to have an unstable resistance:</p>
+        <img src="./image/4.png" style="width:5%;height:5%" class="center">
+        <p style="font: 200">
+            <center><b>or</b></center>
+        </p>
+        <img src="./image/5.png" style="width:5%;height:5%" class="center"><br>
+        <p align="justify">In fact, any time you see a component symbol drawn with a diagonal arrow through it, that component has a variable rather than a fixed value. This symbol “modifier” (the diagonal arrow) is standard electronic symbol convention.</p>
+
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

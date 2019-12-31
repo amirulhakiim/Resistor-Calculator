@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/roboto_font.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif;
+            margin: 0%;
+            background-color: cadetblue;
+            line-height: 20px;
+        }
+        
+        h1 {
+            padding-block-start: 20px;
+        }
+    </style>
+    <script>
+        function process1_1() {
+            input1_1 = parseInt(document.getElementById("task1_1").value);
+            if (input1_1 == 1492) {
+                document.getElementById("result1_1").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result1_1").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+
+        function process1_2() {
+            input1_2 = parseInt(document.getElementById("task1_2").value);
+            if (input1_2 == 2242) {
+                document.getElementById("result1_2").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result1_2").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+
+        function process1_3() {
+            input1_3 = parseInt(document.getElementById("task1_3").value);
+            if (input1_3 == 4847) {
+                document.getElementById("result1_3").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result1_3").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+
+
+        function process2_1() {
+            input2_1 = parseInt(document.getElementById("task2_1").value);
+            if (input2_1 == 5.00) {
+                document.getElementById("result2_1").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result2_1").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+
+        function process2_2() {
+            input2_2 = parseFloat(document.getElementById("task2_2").value);
+            if (input2_2 == 9.57) {
+                document.getElementById("result2_2").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result2_2").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+
+        function process2_3() {
+            input2_3 = parseFloat(document.getElementById("task2_3").value);
+            if (input2_3 == 248.12) {
+                document.getElementById("result2_3").innerHTML = "<center>You are Correct!<center>"
+            } else {
+                document.getElementById("result2_3").innerHTML = "<center>Please Try Again...<center>"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="./MainPage.html">Home</a>
+        <a href="./Example.html" class="active">Examples</a>
+        <a href="./Calculate.html">Calculator</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div style="padding-left:32px;padding-right:32px">
+    <center>
+        <h1><u>Examples</u></h1>
+
+    </center>
+    <br>
+    <button class="accordion"><b><u>Resistors in Series</u></b></button>
+    <div class="panel">
+        <p>
+            When resistors are connected one after each other this is called connecting in series. This is shown below.
+        </p>
+        <img src="./image/series.PNG" style="width:40%;height:40%" class="center">
+        <p>
+            To calculate the total overall resistance of a number of resistors connected in this way you add up the individual resistances. This is done using the following formula:<br>
+        </p>
+        <p>
+            <b><center>Rtotal = R1 + R2 + R3 ... + Rf.</center></b>
+        </p>
+    </div>
+
+    <button class="accordion"><b><u>Resistors in Parallel</u></b></button>
+    <div class="panel">
+        <p>
+            When resistors are connected across each other (side by side) this is called connecting in parallel. This is shown below.
+        </p>
+        <img src="./image/parallel.PNG" style="width:30%;height:30%" class="center">
+        <p>
+            To calculate the total overall resistance of a of two resistors connected in this way you can use the following formula:
+        </p>
+        <p>
+            <b><center>Rtotal = (R1 x R2) / R1 + R2 </center></b>
+        </p>
+    </div>
+    <button class="accordion"><b><u>Resistors in Parallel (more than 2)</u></b></button>
+    <div class="panel">
+        <img src="./image/parallel3.PNG" style="width:25%;height:25%" class="center">
+        <p>To calculate the total overall resistance of a number of three or more resistors connected in this way you can use the following formula:</p>
+        <p>
+            <b><center>1/Rtotal = 1/R1 + 1/R2 + 1/R3 ... + 1/Rf</center></b>
+        </p>
+    </div>
+    <button class="accordion"><b><u>Exercise</u></b></button>
+    <div class="panel">
+        <p><b><u>Task 1:</u></b></p>
+        <p>Calculate the total resistance of the following resistor in series.</p>
+        <img src="./image/task1.1.PNG" style="width:30%;height:30%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task1_1"> &#8486  <button onclick="process1_1()">Check</button></center></label>
+        <p id="result1_1"></p>
+
+        <img src="./image/task1.2.PNG" style="width:30%;height:30%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task1_2"> &#8486  <button onclick="process1_2()">Check</button></center></label>
+        <p id="result1_2"></p>
+
+        <img src="./image/task1.3.PNG" style="width:30%;height:30%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task1_3"> &#8486  <button onclick="process1_3()">Check</button></center></label>
+        <p id="result1_3"></p>
+
+        <p><b><u>Task 2:</u></b></p>
+        <p>Calculate the total resistance of the following resistor in parallel. (Round to 2 decimal points)</p>
+        <img src="./image/task2.1.PNG" style="width:20%;height:20%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task2_1"> &#8486  <button onclick="process2_1()">Check</button></center></label>
+        <p id="result2_1"></p>
+
+        <img src="./image/task2.2.PNG" style="width:20%;height:20%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task2_2"> &#8486  <button onclick="process2_2()">Check</button></center></label>
+        <p id="result2_2"></p>
+
+        <img src="./image/task2.3.PNG" style="width:20%;height:20%" class="center"><br>
+        <label><center>Total Resistance : <input type="number" id="task2_3"> &#8486  <button onclick="process2_3()">Check</button></center></label>
+        <p id="result2_3"></p>
+    </div>
+
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/roboto_font.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif;
+            margin: 0%;
+            background-color: cadetblue;
+            line-height: 20px;
+        }
+        
+        h1 {
+            padding-block-start: 20px;
+        }
+    </style>
+    <script>
+        var inputcount;
+        var inputcount2;
+
+        function process() {
+
+            var parentpara = document.getElementById("outputs");
+
+            while (parentpara.firstChild) {
+                parentpara.removeChild(parentpara.firstChild);
+            }
+            inputcount = parseInt(document.getElementById("resistor1").value);
+            console.log(inputcount);
+            var mynewinputs;
+            var output;
+
+            for (var i = 0; i < inputcount; i++) {
+                var j = i + 1;
+                mynewinputs = document.createElement("input");
+                mynewinputs.id = "input" + i;
+                mynewinputs.type = "text";
+                mynewinputs.size = 25;
+                mynewinputs.placeholder = "Resistor " + j + ", enter value";
+                parentpara.appendChild(mynewinputs);
+                parentpara.appendChild(document.createElement("br"));
+            }
+
+            output = document.createElement("input");
+            output.type = "button";
+            output.id = "allinput";
+            output.value = "Calculate";
+            output.addEventListener('click', processvalues, false);
+            parentpara.appendChild(output);
+        }
+
+        function processvalues() {
+            var rTotal = 0;
+            for (var i = 0; i < inputcount; i++) {
+                if (1 == inputcount) {
+                    var rTotal = parseInt(document.getElementById("input" + i).value);
+                } else {
+                    var inputvalue1 = parseInt(document.getElementById("input" + i).value);
+                    rTotal = rTotal + inputvalue1;
+                }
+            }
+            document.getElementById("result").innerHTML = "<b>The total resistance is " + rTotal + " &#8486</b>";
+        }
+
+
+        function process2() {
+
+            var parentpara2 = document.getElementById("outputs2");
+
+            while (parentpara2.firstChild) {
+                parentpara2.removeChild(parentpara2.firstChild);
+            }
+            inputcount2 = parseInt(document.getElementById("resistor2").value);
+            var mynewinputs2;
+            var output2;
+
+            for (var i = 0; i < inputcount2; i++) {
+                j = i + 1;
+                mynewinputs2 = document.createElement("input");
+                mynewinputs2.id = "input" + i;
+                mynewinputs2.type = "text";
+                mynewinputs2.size = 25;
+                mynewinputs2.placeholder = "Resistor " + j + ", enter value";
+                parentpara2.appendChild(mynewinputs2);
+                parentpara2.appendChild(document.createElement("br"));
+            }
+
+            output2 = document.createElement("input");
+            output2.type = "button";
+            output2.id = "allinput";
+            output2.value = "Calculate";
+            output2.addEventListener('click', processvalues2, false);
+            parentpara2.appendChild(output2);
+        }
+        var rTotal = 0;
+
+        function processvalues2() {
+            var rTotal = 0;
+            for (var i = 0; i < inputcount2; i++) {
+                if (inputcount2 == 2) {
+                    var inputvalue1 = parseInt(document.getElementById("input" + i).value);
+                    ++i;
+                    var inputvalue2 = parseInt(document.getElementById("input" + i).value);
+                    var num1 = inputvalue1 * inputvalue2;
+                    var num2 = inputvalue1 + inputvalue2;
+                    rTotal = num2 / num1;
+
+                } else if (inputcount2 > 2) {
+                    var inputvalue1 = parseInt(document.getElementById("input" + i).value);
+                    var num = 1 / inputvalue1;
+                    rTotal = rTotal + num;
+                } else {
+                    var rTotal = 1 / parseInt(document.getElementById("input" + i).value);
+                }
+            }
+            document.getElementById("result2").innerHTML = "<b>The total resistance is " + (1 / rTotal).toFixed(2) + " &#8486</b>";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="./MainPage.html">Home</a>
+        <a href="./Example.html">Examples</a>
+        <a href="./Calculate.html" class="active">Calculator</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div style="padding-left:32px;padding-right:32px">
+        <center>
+            <h1><u>Calculator</u></h1>
+        </center><br>
+    </div>
+    <button class="accordion"><b><u>Total Resistance Calculator - Series</u></b></button>
+    <div class="panel" style="line-height:40px">
+        <p>
+            <label>Enter the number of Resistor(s) in series: <input type="text" id="resistor1"></label>
+            <input type="button" id="start" value="Enter" onclick="process()">
+        </p>
+        <p id="outputs"></p>
+        <p id="result"></p>
+    </div>
+    <button class="accordion"><b><u>Total Resistance Calculator - Parallel</u></b></button>
+    <div class="panel" style="line-height:40px">
+        <p>
+            <label>Enter the number of Resistor(s) in parallel: <input type="text" id="resistor2"></label>
+            <input type="button" id="start2" value="Enter" onclick="process2()">
+        </p>
+        <p id="outputs2"></p>
+        <p id="result2"></p>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
